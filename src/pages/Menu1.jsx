@@ -1,9 +1,5 @@
 import React from 'react';
 import image1 from '../assets/images/restaurants/image1.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
-
 
 const Menu1 = () => {
     return (
@@ -17,9 +13,10 @@ const Menu1 = () => {
                 <div className="menuContainer wrapper">
                     <div className="title">
                         <h2>La palette du goût</h2>
-                        <div className="like">
-
-                        <FontAwesomeIcon icon={regular('coffee')} />
+                        <div className="like fa-stack">
+                            <i className="fa-solid fa-heart fa-stack-1x"></i>
+                            <i className="fa-regular fa-heart fa-stack-1x"></i>
+                        </div>
                     </div>
                     </div>
                     <div className="contentMenu">
