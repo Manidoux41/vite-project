@@ -126,8 +126,7 @@ const Menu1 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="btn">Commander</div>
-                </div>
+                    <div className="btn">Commander</div>                
             </section>
             </main>
         </>
