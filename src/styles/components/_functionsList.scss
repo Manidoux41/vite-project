@@ -1,0 +1,87 @@
+@use "../abstracts/" as *;
+/****************************FUNCTIONSLIST*******************************************************/
+
+#functionsList {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  .functionListCardsTitle {
+    width: 100%;
+    @include flexPositionSimple(row, flex-start);
+    h3 {
+      align-self: flex-start;
+      padding: 25px 0 25px 0;
+      margin-left: 0;
+    }
+  }
+  ol {
+    counter-reset: section;
+    width: 100%;
+    @include flexPositionSimple(column, space-between);
+    gap: 16px;  
+    @media screen and (min-width:768px) {
+      @include flexPositionSimple(row, space-between);
+      flex-wrap: wrap;   
+    }
+    @media screen and (min-width:992px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    li {
+      background-color: $lightgrey;
+      width:100%;
+      padding: 20px 15px 20px 15px;
+      margin: 0 auto;
+      border-radius: 16px;
+      @include boxShadowButton;
+      @include flexPositionSimple(row, space-between);
+      @include zoomTransition();
+      &:hover {
+        @include zoomTransform();
+        background: rgba(155, 183, 255, 0.33);
+        .fa-solid {
+          color: $primary;
+        }
+      }      
+      &::before {
+        counter-increment: section;
+        content: counter(section);
+        background: $primary;
+        padding: 5px 10px;
+        border-radius: 50%;
+        margin-left: -30px;
+        margin-right: 15px;
+        align-self: center;
+        color: $white;
+      }      
+      @media screen and (min-width:768px) {
+        width: 40%;
+      }
+      @media screen and (min-width:992px) {
+        width: 31%;
+      }
+      span {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-self: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;        
+        .fa-solid {
+          align-self: center;
+          color: $darkgrey;
+          font-size: 20px;
+        }
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        align-self: center;
+        font-size: .75rem;
+        font-weight: 700;
+        margin: 0 15px;
+      }
+    }
+  }
+}

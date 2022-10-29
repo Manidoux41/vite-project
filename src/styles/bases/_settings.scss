@@ -1,0 +1,47 @@
+@use '../abstracts/' as *;
+/****************************SETTINGS*******************************************************/
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fontWebsite;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    position: relative;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color:$black;
+}
+img{
+    @include imagePosition();
+}
+.title {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+h2 {
+    padding-left:20px;
+    font-size: 12px;
+    text-align: center;
+  } 
+  .visibility-hidden {
+    visibility: hidden;
+  }
+
+@media screen and (min-width:992px) {
+    .wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+    }    
+}

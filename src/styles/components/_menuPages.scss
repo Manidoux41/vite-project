@@ -1,0 +1,47 @@
+@use "../abstracts/" as *;
+/****************************MENU PAGE*******************************************************/
+
+#container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -25px;
+  @media screen and (min-width: 992px) {
+    width: 100%;
+  }
+}
+.imageheading {
+  width: 100%;
+  height: 300px;
+}
+.menuContainer {
+  position: relative;
+  height: auto;
+  top: -25px;
+  border: none;
+  border-radius: 25px 25px 0 0;
+  background-color: $lightgrey;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .title {
+    padding-top: 25px;
+    @include flexPositionSimple(row, space-around);
+    h2 {      
+    font-family: $fontTitle;
+    font-size: 25px;
+    }      
+  }
+  .contentMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .btn {
+    @include buttonBlue();
+    text-align: center;
+    align-self: center;
+    width: 200px;
+  }  
+}

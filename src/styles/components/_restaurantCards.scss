@@ -1,0 +1,80 @@
+@use '../abstracts/' as *;
+/**************************************RESTAURANT CARDS*********************************************/
+
+#restaurantCards {
+    margin-top: 50px;
+    padding: 25px;
+    @include flexPosition(column, center, center);
+    background: $lightgrey;
+    .restaurantCardsTitle{
+        width: 100%;
+        @include flexPositionSimple(row, flex-start);
+        h3 {
+            align-self: flex-start;
+            padding: 25px 0 5px 0;
+            margin-left: 0;
+        }
+    }
+    .cards_container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 25px;
+        @media screen and (min-width:768px) {
+            @include flexPositionSimple(row, space-between);
+            flex-wrap: wrap;
+;        }
+        .card{
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            @include boxShadowButton();
+            border-radius: 16px;
+            overflow: hidden;
+            color: $black;
+            @include zoomTransition();
+            @media screen and (min-width:768px) {
+                justify-self: center;
+                width: 48%;
+            }
+            @media screen and (min-width:992px) {
+            height: 450px;            
+            }
+            &:hover {
+                @include zoomTransform();
+            }
+          
+            .image{
+                position: relative;
+                height: 75%;
+                filter:contrast(100%);
+                .new {
+                    background: $tertiary;
+                    color: $tagWordColor;
+                    filter: brightness(100%);
+                    position: absolute;
+                    padding: 5px 7px;
+                    font-size: 18px;
+                    top: 10%;
+                    right: 5%;
+                    z-index: 1;
+                }
+            }             
+            .content {
+                background: $white;
+                height: 25%;
+                @include flexPosition(row, space-between, center);
+                padding-left: 15px;
+                .contentText{
+                    justify-self: flex-start;
+                    white-space: nowrap;
+                    text-overflow: ellipsis; 
+                    h3{
+                        font-size: 16px;
+                    }             
+                }
+            }            
+        }
+    }
+}
